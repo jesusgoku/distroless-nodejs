@@ -6,6 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "start": "node -r esm -r dotenv/config src",
+    "dev": "nodemon --inspect -r esm -r dotenv/config src",
     "code:check": "yarn code:lint; yarn code:format --check",
     "code:clean": "yarn code:lint --fix; yarn code:format --write",
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",
