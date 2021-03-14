@@ -1,0 +1,8 @@
+version: '3.7'
+
+services:
+  app:
+    env_file: ./.env
+    user: nonroot
+    ports:
+      - '${PORT}:${PORT}'

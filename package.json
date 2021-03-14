@@ -8,6 +8,8 @@
   "scripts": {
     "start": "node -r esm -r dotenv/config src",
     "dev": "nodemon --inspect -r esm -r dotenv/config src",
+    "start:docker": "docker-compose -f docker-compose.yml -f docker-compose.production.yml up --build",
+    "dev:docker": "docker-compose up --build",
     "code:check": "yarn code:lint; yarn code:format --check",
     "code:clean": "yarn code:lint --fix; yarn code:format --write",
     "code:lint": "eslint --ext .js,.jsx,.ts,.tsx \"src/\"",

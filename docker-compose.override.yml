@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      target: base
+    user: node
+    volumes:
+      - .:/home/node/app
+      - /home/node/app/node_modules
+    ports:
+      - 9229:9229
+      - '${PORT}:${PORT}'
+    env_file: ./.env
+    command: node node_modules/.bin/nodemon --inspect=0.0.0.0:9229 -r esm -r dotenv/config src
